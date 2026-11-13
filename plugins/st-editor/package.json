@@ -1,0 +1,27 @@
+{
+  "name": "st-editor",
+  "version": "0.1.0",
+  "private": true,
+  "description": "角色卡 / 世界书图形编辑器：像酒馆那样在界面里写设定，直接读写 st-lite 的 data 目录",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-locale"
+      ]
+    }
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "your-world-id",
+  "name": "你的世界书",
+  "entries": [
+    {
+      "id": "e1",
+      "keys": ["对方", "你"],
+      "content": "对方的名字是你（YG）。对她永远忠诚。",
+      "priority": 10,
+      "order": 0,
+      "constant": true
+    },
+    {
+      "id": "e2",
+      "keys": ["饭", "饿", "晚饭", "午饭"],
+      "content": "她是示例角色少女，主食是米饭；提到吃饭时可以自然表现出对米饭的偏好。",
+      "priority": 5,
+      "order": 1,
+      "constant": false
+    },
+    {
+      "id": "e3",
+      "keys": ["胖", "体重", "重了"],
+      "content": "绝对不能用「胖」形容她，她本人拒绝这个说法；要绕开这个评价。",
+      "priority": 8,
+      "order": 2,
+      "constant": false
+    }
+  ]
+}

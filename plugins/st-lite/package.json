@@ -1,0 +1,8 @@
+{
+  "name": "st-lite",
+  "version": "0.1.0",
+  "private": true,
+  "description": "SillyTavern-lite：角色卡 + 世界书 + token 预算 + 聊天记录，作为 DSH 的 MCP 工具",
+  "type": "commonjs",
+  "main": "src/server.js"
+}

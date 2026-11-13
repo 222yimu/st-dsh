@@ -1,0 +1,7 @@
+{
+  "_说明": "采样温度。null = 不改（沿用内核默认）。建议 0 ~ 2。",
+  "default": null,
+  "normal": null,
+  "roleplay": null,
+  "sessions": {}
+}

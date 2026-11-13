@@ -1,0 +1,5 @@
+# st-temp bundle：把宿主半（监听 llm/stream 注入 temperature）插进 profile 的插件树。
+# 没有前端半，纯宿主行为。
+- insert:
+    - id: st-temp
+      name: 'st-temp'

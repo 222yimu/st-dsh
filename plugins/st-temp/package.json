@@ -1,0 +1,20 @@
+{
+  "name": "st-temp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "采样温度控制器：监听 DSH 的 llm/stream waterfall，按会话/模式注入 temperature",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,28 @@
+{
+  "entries": {
+    "0": {
+      "uid": 0,
+      "stliteId": "e1",
+      "key": [
+        "设定",
+        "世界"
+      ],
+      "keysecondary": [],
+      "comment": "示例条目",
+      "content": "这里写一条设定：什么情况下会被提到，就写什么关键词。",
+      "constant": false,
+      "selective": true,
+      "selectiveLogic": 0,
+      "order": 100,
+      "position": 0,
+      "depth": 4,
+      "disable": false,
+      "probability": 100,
+      "useProbability": true,
+      "caseSensitive": null,
+      "matchWholeWords": null,
+      "excludeRecursion": false,
+      "preventRecursion": false
+    }
+  }
+}

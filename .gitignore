@@ -1,0 +1,42 @@
+# 依赖与构建产物（本项目零依赖，只防御性忽略）
+node_modules/
+pnpm-lock.yaml
+package-lock.json
+
+# 备份与临时文件
+*.bak
+*.bak-*
+*.tmp
+*.orig
+*.rej
+
+# 运行时产生的数据（卡、聊天、快照、导出）
+plugins/st-lite/data/cards/*.json
+plugins/st-lite/data/worlds/*.json
+plugins/st-lite/data/chats/*.jsonl
+plugins/st-lite/data/chats/*.md
+plugins/st-lite/data/chats/*.branch
+plugins/st-lite/data/chats/*.pending.json
+plugins/st-lite/data/checkpoints/
+plugins/st-lite/data/exports/
+plugins/st-lite/data/imports/
+plugins/st-lite/data/active.json
+plugins/st-lite/data/groups.json
+plugins/st-lite/data/story/
+
+# 但保留示例数据
+!plugins/st-lite/data/cards/example.json
+!plugins/st-lite/data/worlds/example.json
+!plugins/st-lite/data/sampling.json
+!plugins/st-lite/data/mode.json
+!plugins/st-lite/data/chats/.gitkeep
+
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
+
+# 别把别人的源码或大的参考仓库带进来
+_ref/

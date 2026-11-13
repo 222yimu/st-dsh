@@ -1,0 +1,57 @@
+# 这是要粘进 <PROFILE>/cordis.patch.yml 的片段示例。
+# 把 <PROFILE> 换成你的 profile 绝对路径，<USER_NAME> 换成角色对你的称呼。
+# 粘之前先备份原文件。
+
+# ── 1. st-lite 作为 MCP 服务挂上来 ───────────────────────────────
+- id: mcp-st-lite
+  name: '@deepseek-ai/dsh-mcp-client'
+  config:
+    serverName: st-lite
+    transport: stdio
+    command: node
+    args:
+      - '<PROFILE>/node_modules/st-lite/src/server.js'
+    env:
+      ST_USER_NAME: '<USER_NAME>'
+      # 可选：世界书递归轮数（默认 1，0 = 关闭）
+      # ST_WI_RECURSION: '1'
+      # 可选：token 估算校准系数（用 st_tokens 的 suggestedCalib 反推）
+      # ST_TOKEN_CALIB: '1'
+
+# ── 2. 扮演模式 preset ──────────────────────────────────────────
+- id: preset-roleplay
+  name: '@deepseek-ai/dsh-agent-preset'
+  config:
+    id: roleplay
+    name: 扮演模式
+    order: 20
+    plugins:
+      - '@deepseek-ai/dsh-persona'
+      - './roleplay-preset/roleplay-guard.mjs'
+      - '@deepseek-ai/dsh-compaction'
+
+# ── 3. persona（内容由 build-persona.mjs 生成，这里只是说明）────
+# 跑 `node node_modules/roleplay-preset/build-persona.mjs` 后，
+# 它会自动把下面这段写进 cordis.patch.yml（含完整 prefix 文本）。
+#
+# - id: persona-roleplay
+#   name: '@deepseek-ai/dsh-persona'
+#   config:
+#     prefix: |
+#       ……由脚本生成……
+
+# ── 4. 三个宿主插件（也可以只加进 package.json 的 dsh.profile.bundles）──
+# 注意：既进 bundles 又在这里出现会重复加载，二选一。
+# - id: st-mode
+#   name: 'st-mode'
+# - id: st-editor
+#   name: 'st-editor'
+# - id: st-temp
+#   name: 'st-temp'
+
+# ── 5. 可选：把扮演模式设成新建会话的默认 ───────────────────────
+# - id: agent-preset-registry
+#   name: '@deepseek-ai/dsh-agent-preset-registry'
+#   config:
+#     default: standard
+#     selectedDefault: roleplay

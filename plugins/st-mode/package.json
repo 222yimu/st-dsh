@@ -1,0 +1,22 @@
+{
+  "name": "st-mode",
+  "version": "0.1.0",
+  "private": true,
+  "description": "会话记忆模式开关：正常模式用 sage-mem，角色扮演模式用 st-lite。Hero/悬浮条二选一呈现。",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "license": "MIT",
+  "dshTarget": "0.2.1-rc.2"
+}

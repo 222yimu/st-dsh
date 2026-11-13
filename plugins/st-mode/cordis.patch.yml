@@ -1,0 +1,5 @@
+# st-mode bundle：把宿主半（HTTP 桥）插进 profile 的插件树。
+# 前端半（client.js）由 dsh.client 声明自动加载，不需要在这里登记。
+- insert:
+    - id: st-mode
+      name: 'st-mode'
